@@ -1,0 +1,73 @@
+export const fakeFetch = (url) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (url === "https://example.com/api/questions") {
+        resolve({
+          status: 200,
+          message: "Success",
+          data: {
+            questions: [
+              { id: 1, question: "I {[play][hate][love]} soccer" },
+              { id: 2, question: "She {[reads][writes]} books" },
+              {
+                id: 3,
+                question: "They {[eat][cook][sleep]} at the restaurant",
+              },
+              { id: 4, question: "He {[plays][watches]} guitar" },
+              { id: 5, question: "We {[study][party][work]} on weekends" },
+              {
+                id: 6,
+                question: "The cat {[sleeps][plays][hunts]} during the day",
+              },
+              {
+                id: 7,
+                question: "You {[travel][paint][code]} in your free time",
+              },
+              { id: 8, question: "The team {[wins][loses][ties]} every match" },
+              { id: 9, question: "I {[eat][avoid][crave]} spicy food" },
+              {
+                id: 10,
+                question: "She {[loves][dislikes][ignores]} pineapple on pizza",
+              },
+              {
+                id: 11,
+                question: "They {[listen to][create][dance to]} music",
+              },
+              { id: 12, question: "He {[watches][plays][ignores]} the news" },
+              { id: 13, question: "We {[visit][ignore][explore]} new places" },
+              {
+                id: 14,
+                question:
+                  "The dog {[barks at][sleeps through][chases]} thunderstorms",
+              },
+              {
+                id: 15,
+                question: "You {[exercise][meditate][procrastinate]} regularly",
+              },
+              {
+                id: 16,
+                question: "The movie {[entertains][bores][inspires]} me",
+              },
+              { id: 17, question: "I {[love][hate][tolerate]} rainy days" },
+              { id: 18, question: "She {[learns][teaches][forgets]} quickly" },
+              {
+                id: 19,
+                question:
+                  "They {[play][watch][analyze]} football every weekend",
+              },
+              {
+                id: 20,
+                question: "He {[cooks][eats][orders]} dinner every night",
+              },
+            ],
+          },
+        });
+      } else {
+        reject({
+          status: 404,
+          message: "Questions not found.",
+        });
+      }
+    }, 2000);
+  });
+};
