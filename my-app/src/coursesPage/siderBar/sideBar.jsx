@@ -1,6 +1,10 @@
+import { useSelector } from "react-redux";
+import QuestionsList from "../../questionList/questionList";
 import "./sideBar.css";
 
 function SideBar() {
+  const questionsList = useSelector((state) => state.questionsList);
+  console.log(questionsList);
   return (
     <div className="sideBar">
       <div className="cursor">
@@ -27,10 +31,12 @@ function SideBar() {
           <h3>Assignment Title Here</h3>
           <div className="labels">
             <p>Questions:</p>
-            <p className="numberOfQuestions">30 questions</p>
+            <p className="numberOfQuestions">
+              {questionsList.length} questions
+            </p>
           </div>
           <div>
-            <h2>Questions</h2>
+            <QuestionsList />
           </div>
         </div>
       </div>

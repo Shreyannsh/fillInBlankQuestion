@@ -1,6 +1,5 @@
 import { fakeFetch } from "../fakeFetch/fakeFetch";
-
-export const fetchQustions = () => async (dispatch) => {
+export const fetchQuestions = () => async (dispatch) => {
   try {
     const response = await fakeFetch("https://example.com/api/questions");
     if (response.status === 200) {
