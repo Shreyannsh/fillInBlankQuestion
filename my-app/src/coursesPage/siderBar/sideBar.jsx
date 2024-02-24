@@ -13,17 +13,21 @@ function SideBar() {
             <p className="upper-section-text">Saxon Math 5/4</p>
           </div>
           <div className="lower-section">
-            <img src="assets/search-icon" className="search-icon" alt="" />
+            <img src="assets/search-icon.png" className="search-icon" alt="" />
             <input className="input" type="'text" placeholder="Search" />
           </div>
         </div>
-        <div>
-          <p> Lesson 5</p>
+        <div className="questions">
+          <div className="lesson5">
+            <p>
+              <img src="assets/icon.png" /> Lesson 5
+            </p>
+          </div>
 
-          <p>Assignment Title Here</p>
-          <div>
+          <h3>Assignment Title Here</h3>
+          <div className="labels">
             <p>Questions:</p>
-            <p>30 questions</p>
+            <p className="numberOfQuestions">30 questions</p>
           </div>
           <div>
             <h2>Questions</h2>

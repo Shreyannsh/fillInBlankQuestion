@@ -6,7 +6,7 @@
   gap: 8px;
   display: flex;
   flex-direction: row-reverse;
-  padding-left: 14px;
+  padding-left: 8px;
 }
 
 .lesson {
@@ -22,12 +22,15 @@
   width: 400px;
   height: 125.5px;
   border: 0px, 1px, 1px, 0px;
-  gap: 16px;
-  padding: 16px;
+  /* gap: 16px; */
+  /* padding: 16px; */
   background: rgba(242, 244, 247, 1);
-  border-width: 0px, 1px, 1px, 0px;
-  border-style: solid;
+
+  /* border-style: solid; */
   border-color: rgba(234, 236, 240, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .upper-section {
@@ -49,16 +52,89 @@
 }
 
 .upper-section-image {
-  width: 24px;
-  height: 33.5px;
+  width: 44px;
+  height: 45.5px;
   border-radius: 4px;
 }
 
 .lower-section {
+  width: 368px;
+  height: 44px;
+  padding: 10px, 14px, 10px, 14px;
+  border-radius: 8px;
+  border: 1px;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(208, 213, 221, 1);
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  margin-left: 8px;
 }
 
 .input {
-  width: 368px;
-  height: 44px;
+  width: 340px;
+  height: 24px;
   gap: 8px;
+  border: transparent;
+}
+
+.input::placeholder {
+  /* //styleName: Text md/Regular; */
+  font-family: Source Sans Pro;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(102, 112, 133, 1);
+}
+
+.input:focus {
+  outline: none;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  color: rgba(102, 112, 133, 1);
+  margin-top: -5px;
+}
+
+.questions {
+  border: 1px solid rgba(234, 236, 240, 1);
+}
+
+.lesson5 {
+  height: 40px;
+  padding: 8px, 16px, 8px, 16px;
+  gap: 4px;
+  background: rgba(249, 250, 251, 1);
+  border-bottom: 1px solid rgba(234, 236, 240, 1);
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  color: rgba(102, 112, 133, 1);
+}
+
+h3 {
+  padding-left: 10px;
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10px;
+  color: rgba(102, 112, 133, 1);
+  font-weight: 500;
+}
+
+.numberOfQuestions {
+  width: 104px;
+  height: 25px;
+  padding: 0px, 4px, 0px, 4px;
+  border-radius: 3px;
+  background: rgba(242, 244, 247, 1);
+  text-align: center;
 }
