@@ -1,7 +1,11 @@
 import "./header.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Header() {
+  const activeLink = ({ isActive }) => ({
+    background: isActive ? "rgba(253, 239, 219, 1)" : "",
+    boxShadow: isActive ? "0px 2px 0px 0px rgba(246, 177, 77, 1)" : "",
+  });
   return (
     <div className="header">
       <div className="header-section">
@@ -9,31 +13,29 @@ function Header() {
         <img src="/assets/logoline.png" alt="" />
       </div>
       <div className="header-section">
-        <div className="header-sub-section">
-          <Link className="link">
-            <img src="/assets/dashboard-icon.png" alt="" />
-            <p className="header-sub-section-heading">Dashboard</p>
-          </Link>
-        </div>
-        <div className="header-sub-section">
-          <Link to="/courses" className="link">
-            <img src="/assets/course-icon.png" alt="" />
-            <p className="header-sub-section-heading">Courses</p>
-          </Link>
-        </div>
+        <NavLink className="header-sub-section link">
+          <img src="/assets/dashboard-icon.png" alt="" />
+          <p className="header-sub-section-heading">Dashboard</p>
+        </NavLink>
 
-        <div className="header-sub-section">
-          <Link className="link">
-            <img src="/assets/learning-lab-icon.png" alt="" />
-            <p className="header-sub-section-heading">Learning Lab</p>
-          </Link>
-        </div>
-        <div className="header-sub-section">
-          <Link className="link">
-            <img src="/assets/achievment-icon.png" alt="" />
-            <p className="header-sub-section-heading">Achievements</p>
-          </Link>
-        </div>
+        <NavLink
+          to="/courses"
+          style={activeLink}
+          className="header-sub-section link"
+        >
+          <img src="/assets/course-icon.png" alt="" />
+          <p className="header-sub-section-heading">Courses</p>
+        </NavLink>
+
+        <NavLink className="header-sub-section link">
+          <img src="/assets/learning-lab-icon.png" alt="" />
+          <p className="header-sub-section-heading">Learning Lab</p>
+        </NavLink>
+
+        <NavLink className="header-sub-section link">
+          <img src="/assets/achievment-icon.png" alt="" />
+          <p className="header-sub-section-heading">Achievements</p>
+        </NavLink>
       </div>
       <div className="header-section">
         <img src="/assets/Notifcation and Profile.png" alt="" />

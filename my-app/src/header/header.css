@@ -27,7 +27,7 @@
 }
 
 .header-sub-section:hover {
-  background: rgba(253, 239, 219, 1);
+  background: rgb(255, 222, 180);
   box-shadow: 0px 2px 0px 0px rgba(246, 177, 77, 1);
 }
 
