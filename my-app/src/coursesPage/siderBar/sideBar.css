@@ -23,8 +23,42 @@
   height: 125.5px;
   border: 0px, 1px, 1px, 0px;
   gap: 16px;
+  padding: 16px;
   background: rgba(242, 244, 247, 1);
   border-width: 0px, 1px, 1px, 0px;
   border-style: solid;
   border-color: rgba(234, 236, 240, 1);
+}
+
+.upper-section {
+  width: 368px;
+  height: 33.5px;
+  gap: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.upper-section-text {
+  /* //styleName: Text xl/Medium; */
+  font-family: Source Sans Pro;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.upper-section-image {
+  width: 24px;
+  height: 33.5px;
+  border-radius: 4px;
+}
+
+.lower-section {
+}
+
+.input {
+  width: 368px;
+  height: 44px;
+  gap: 8px;
 }

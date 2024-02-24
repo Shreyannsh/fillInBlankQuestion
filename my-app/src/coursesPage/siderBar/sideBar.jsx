@@ -9,11 +9,12 @@ function SideBar() {
       <div className="lesson">
         <div className="lesson-header">
           <div className="upper-section">
-            <img src="assets/Book.png" alt="" />
-            <p>Saxon Math 5/4</p>
+            <img className="upper-section-image" src="assets/Book.png" alt="" />
+            <p className="upper-section-text">Saxon Math 5/4</p>
           </div>
           <div className="lower-section">
-            <input type="'text" placeholder="Search" />
+            <img src="assets/search-icon" className="search-icon" alt="" />
+            <input className="input" type="'text" placeholder="Search" />
           </div>
         </div>
         <div>
