@@ -1,6 +1,7 @@
 const initialState = {
-  questionsList: [],
-  a: [],
+  // questionsList: [],
+  // questionNumber: 0,
+  random: "test",
 };
 
 const reducer = (state = initialState, action) => {
@@ -8,6 +9,7 @@ const reducer = (state = initialState, action) => {
     case "addQuestionList":
       return { state, questionsList: [...action.payload] };
     case "addQuestionNumber":
+      console.log("boom");
       return { state, questionNumber: action.payload };
     default:
       return state;
