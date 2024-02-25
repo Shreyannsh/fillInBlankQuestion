@@ -6,6 +6,9 @@ function QuestionSection() {
   const questionsList = useSelector((state) => state.questionsList);
   const questionNumber = useSelector((state) => state.questionNumber);
 
+  console.log(questionsList);
+  console.log(questionNumber);
+
   const question = questionsList.find(
     (question) => question.id === questionNumber
   );
