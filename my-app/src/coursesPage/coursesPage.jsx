@@ -11,6 +11,7 @@ function CoursesPage() {
 
   useEffect(() => {
     dispatch(fetchQuestions());
+    dispatch({ type: "addQuestionNumber", payload: 1 });
   }, []);
 
   return (

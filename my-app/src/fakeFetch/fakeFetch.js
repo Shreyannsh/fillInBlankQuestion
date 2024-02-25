@@ -1,8 +1,8 @@
-export const fakeFetch = (url) => {
+export const fakeFetch = (url, modifyAnswered = false, id, answer) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (url === "https://example.com/api/questions") {
-        resolve({
+        const response = {
           status: 200,
           message: "Success",
           data: {
@@ -103,7 +103,21 @@ export const fakeFetch = (url) => {
               },
             ],
           },
-        });
+        };
+        if (modifyAnswered) {
+          // Modify the answered key for a specific question
+          const questionToModify = id; // Change this to the desired question ID
+          const modifiedQuestions = response.data.questions.map((question) => {
+            if (question.id === questionToModify) {
+              return { ...question, answered: answer };
+            }
+            return question;
+          });
+
+          response.data.questions = modifiedQuestions;
+        }
+
+        resolve(response);
       } else {
         reject({
           status: 404,
