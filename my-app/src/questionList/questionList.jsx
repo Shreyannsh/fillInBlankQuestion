@@ -2,16 +2,14 @@ import "./questionList.css";
 import { useDispatch, useSelector } from "react-redux";
 
 function QuestionsList() {
-  // const questionsList = useSelector((state) => state.questionsList);
+  const questionsList = useSelector((state) => state.questionsList);
   const questionNumber = useSelector((state) => state.questionNumber);
-  // console.log(questionsList);
-  // console.log(questionNumber);
 
   const dispatch = useDispatch();
 
   return (
     <div className="questionList">
-      {/* {questionsList?.map((ques) => (
+      {questionsList?.map((ques) => (
         <div
           to={`/question/${ques.id}`}
           className="questionNumberContainer"
@@ -23,14 +21,14 @@ function QuestionsList() {
           <p className="questionNumber">
             {ques.answered === "correct" && <img src="/assets/correct.png" />}
             {ques.answered === "wrong" && <img src="/assets/wrong.png" />}
-            {questionNumber === "" && <img src="/assets/not-attempted.png" />}
-            {questionNumber !== "" && ques.answered === "" && (
+            {questionNumber === 0 && <img src="/assets/not-attempted.png" />}
+            {questionNumber !== 0 && ques.answered === "" && (
               <img src="/assets/progress.png" />
             )}
             {ques.id}
           </p>
         </div>
-      ))} */}
+      ))}
     </div>
   );
 }

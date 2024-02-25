@@ -3,8 +3,8 @@ import QuestionsList from "../../questionList/questionList";
 import "./sideBar.css";
 
 function SideBar() {
-  // const questionsList = useSelector((state) => state.questionsList);
-  // console.log(questionsList);
+  const questionsList = useSelector((state) => state.questionsList);
+
   return (
     <div className="sideBar">
       <div className="cursor">
@@ -31,9 +31,9 @@ function SideBar() {
           <h3>Assignment Title Here</h3>
           <div className="labels">
             <p>Questions:</p>
-            {/* <p className="numberOfQuestions">
+            <p className="numberOfQuestions">
               {questionsList.length} questions
-            </p> */}
+            </p>
           </div>
           <div>
             <QuestionsList />
