@@ -137,15 +137,18 @@
 }
 
 .answer {
-  font-size: 32px;
-  color: rgb(22, 167, 22);
+  font-size: 36px;
   padding: 5px 12px;
   width: 160px;
-  height: 46px;
   border-radius: 5px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .result-img {
-  height: 50px;
+  position: relative;
+  top: 8px;
+  right: 5px;
 }

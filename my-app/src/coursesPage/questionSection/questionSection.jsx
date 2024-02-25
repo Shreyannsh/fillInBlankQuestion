@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import "./questionSection.css";
+import { IoClose } from "react-icons/io5";
+import { FaCheck } from "react-icons/fa6";
 
 import { useDispatch, useSelector } from "react-redux";
 import { updateAnswer } from "../../redux/action";
@@ -73,6 +75,9 @@ function QuestionSection() {
 
   useEffect(() => {
     getAnswersFunction();
+    return () => {
+      setInput(() => "");
+    };
   }, [question]);
 
   return (
@@ -97,19 +102,18 @@ function QuestionSection() {
           <span className="attempt">6 attempts left</span>
         </div>
       </div>
-      <p
+      <div
         className="answer"
         style={{
           color: question?.answered === "wrong" ? "red" : "rgb(22, 167, 22)",
         }}
       >
-        {question?.answered}
-        {question?.answered === "wrong" ? (
-          <img className="result-img" src="/assets/wrong.png" alt="" />
-        ) : (
-          <img className="result-img" src="/assets/correct.png" alt="" />
-        )}
-      </p>
+        <div className="result-img">
+          {question?.answered === "wrong" && <IoClose />}
+          {question?.answered === "correct" && <FaCheck />}
+        </div>
+        <p>{question?.answered}</p>
+      </div>
     </div>
   );
 }
