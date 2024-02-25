@@ -8,7 +8,6 @@ const questionReducer = (state = initialState, action) => {
     case "addQuestionList":
       return { ...state, questionsList: [...action.payload] };
     case "addQuestionNumber":
-      console.log("boom");
       return { ...state, questionNumber: action.payload };
     default:
       return state;

@@ -1,5 +1,6 @@
 .coursesPage {
   padding-top: 66px;
   display: flex;
+  background-color: rgba(247, 245, 241, 1);
   /* justify-content: space-between; */
 }

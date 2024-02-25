@@ -1,4 +1,5 @@
 import { fakeFetch } from "../fakeFetch/fakeFetch";
+
 export const fetchQuestions = () => async (dispatch) => {
   try {
     const response = await fakeFetch("https://example.com/api/questions");
@@ -18,6 +19,7 @@ export const updateAnswer = (id, answer) => async (dispatch) => {
       id,
       answer
     );
+
     if (response.status === 200) {
       dispatch({ type: "addQuestionList", payload: response.data.questions });
     }

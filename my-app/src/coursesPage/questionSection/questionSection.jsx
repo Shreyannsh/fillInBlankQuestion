@@ -8,10 +8,7 @@ function QuestionSection() {
   const dispatch = useDispatch();
   const questionsList = useSelector((state) => state.questionsList);
   const questionNumber = useSelector((state) => state.questionNumber);
-
   console.log(questionsList);
-  console.log(questionNumber);
-
   const [answerOptions, setAnswerOptions] = useState([]);
   const [input, setInput] = useState();
 
@@ -29,9 +26,12 @@ function QuestionSection() {
         key={index}
         type="text"
         onChange={(e) => setInput(e.target.value)}
+        className="input-area"
       />
     ) : (
-      <span key={index}>{word}</span>
+      <span className="question-word" key={index}>
+        {word}
+      </span>
     )
   );
 
@@ -76,12 +76,40 @@ function QuestionSection() {
   }, [question]);
 
   return (
-    <div>
-      <div className="question">{fillInBlankArray.map((word) => word)} </div>
-      <div>
-        <button onChange={() => checkAnswerFunction()}>Check</button>
+    <div className="question-section">
+      <div className="question-section-header">
+        <p className="question-number">Question {question?.id}</p>
+        <div className="isFlaged-section">
+          {question?.isFlaged ? (
+            <img className="bookmark-img" src="/assets/bookmark-fill.png" />
+          ) : (
+            <img className="bookmark-img" src="/assets/bookmark-empty.png" />
+          )}
+          <span className="flag">Flag for later</span>
+        </div>
       </div>
-      <p>{question.answered}</p>
+      <div className="question-check-section">
+        <div className="question">{fillInBlankArray?.map((word) => word)} </div>
+        <div className="button-section">
+          <button className="check-btn" onClick={() => checkAnswerFunction()}>
+            Check
+          </button>
+          <span className="attempt">6 attempts left</span>
+        </div>
+      </div>
+      <p
+        className="answer"
+        style={{
+          color: question?.answered === "wrong" ? "red" : "rgb(22, 167, 22)",
+        }}
+      >
+        {question?.answered}
+        {question?.answered === "wrong" ? (
+          <img className="result-img" src="/assets/wrong.png" alt="" />
+        ) : (
+          <img className="result-img" src="/assets/correct.png" alt="" />
+        )}
+      </p>
     </div>
   );
 }
