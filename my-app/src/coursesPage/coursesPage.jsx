@@ -5,7 +5,7 @@ import QuestionSection from "./questionSection/questionSection";
 import SideBar from "./siderBar/sideBar";
 import { fetchQuestions } from "../redux/action";
 import { useDispatch } from "react-redux";
-import Footer from "./footer/footer.jsx";
+import Footer from "./footer/FOOTER.JSX";
 
 function CoursesPage() {
   const dispatch = useDispatch();
