@@ -5,25 +5,43 @@
   margin-left: 44px;
   border-radius: 8px;
   background: rgba(255, 255, 255, 1);
-  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.06);
-  box-shadow: 0px 1px 3px 0px rgba(16, 24, 40, 0.1);
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.06),
+    0px 1px 3px 0px rgba(16, 24, 40, 0.1);
   position: relative;
   gap: 12px;
   /* padding: 12px; */
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 }
 
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  width: 90%;
+  margin-top: -2rem;
+}
+
+.heading {
+  margin: 0;
+  margin-top: 0px;
+}
+
 .question-section-header {
-  width: 904px;
+  width: 100%;
   height: 56px;
-  padding: 24px 24px 0px 24px;
+  padding: 0px 24px 0px 24px;
+  margin-top: 24px;
   gap: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .isFlaged-section {
   display: flex;
   align-items: center;
@@ -65,14 +83,15 @@
   margin-top: 7px;
   position: relative;
   width: 100%;
+  height: 5rem;
 }
 
 .question {
-  font-size: 34px;
+  font-size: 30px;
   display: flex;
   align-items: center;
-  margin-left: 12px;
   flex-wrap: wrap;
+  margin-left: -7px;
 }
 
 .button-section {
@@ -82,7 +101,6 @@
   gap: 8px;
   top: 12px;
   position: relative;
-  margin-right: 12px;
 }
 
 .question-word {
@@ -139,10 +157,13 @@
   letter-spacing: 0em;
   color: rgba(51, 51, 255, 1);
 }
+.answer-container {
+  height: 4rem;
+}
 
 .answer {
   margin-top: 20px;
-  font-size: 46px;
+  font-size: 36px;
   border-radius: 5px;
   text-align: center;
   display: flex;
@@ -166,4 +187,28 @@
   inset: 0;
   left: 60px;
   height: 40px;
+}
+
+.question-extra-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40px;
+  height: 272px;
+  padding: 36px 0px 2px 2px;
+  border-radius: 0px 8px 8px 0px;
+  border-left: 1px solid rgb(214, 214, 214);
+  gap: 15px;
+  background: rgba(249, 250, 251, 1);
+}
+
+.question-extra-options-icon {
+  width: 24.8px;
+  height: 30px;
+}
+
+.question-extra-options-icon:hover {
+  cursor: pointer;
+  background-color: rgb(245, 169, 70);
+  border-radius: 5px;
 }
