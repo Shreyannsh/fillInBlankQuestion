@@ -118,6 +118,7 @@
   font-weight: 600;
   line-height: 24px;
   letter-spacing: 0em;
+  position: relative;
 }
 
 .check-btn:hover {
@@ -151,4 +152,10 @@
   position: relative;
   top: 8px;
   right: 5px;
+}
+
+.loader {
+  position: absolute;
+  inset: 0;
+  height: 40px;
 }

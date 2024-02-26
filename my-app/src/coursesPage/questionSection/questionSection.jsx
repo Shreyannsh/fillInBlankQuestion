@@ -10,6 +10,7 @@ function QuestionSection() {
   const dispatch = useDispatch();
   const questionsList = useSelector((state) => state.questionsList);
   const questionNumber = useSelector((state) => state.questionNumber);
+  const isLoading = useSelector((state) => state.isLoading);
   console.log(questionsList);
   const [answerOptions, setAnswerOptions] = useState([]);
   const [input, setInput] = useState();
@@ -97,7 +98,15 @@ function QuestionSection() {
         <div className="question">{fillInBlankArray?.map((word) => word)} </div>
         <div className="button-section">
           <button className="check-btn" onClick={() => checkAnswerFunction()}>
-            Check
+            {isLoading ? (
+              <img
+                className="loader"
+                src="https://i.gifer.com/ZKZg.gif"
+                alt="loading"
+              />
+            ) : (
+              "Check"
+            )}
           </button>
           <span className="attempt">6 attempts left</span>
         </div>

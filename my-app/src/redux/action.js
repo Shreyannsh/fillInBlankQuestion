@@ -13,6 +13,7 @@ export const fetchQuestions = () => async (dispatch) => {
 
 export const updateAnswer = (id, answer) => async (dispatch) => {
   try {
+    dispatch({ type: "startLoading" });
     const response = await fakeFetch(
       "https://example.com/api/questions",
       true,
@@ -22,6 +23,7 @@ export const updateAnswer = (id, answer) => async (dispatch) => {
 
     if (response.status === 200) {
       dispatch({ type: "addQuestionList", payload: response.data.questions });
+      dispatch({ type: "stopLoading" });
     }
   } catch (error) {
     console.log(error);
