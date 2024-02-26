@@ -1,11 +1,7 @@
 .sideBar {
-  width: 448px;
   top: 66px;
-  border: 0px, 1px, 0px, 0px;
+  border: 0px 1px 0px 0px;
   gap: 8px;
-  display: flex;
-  flex-direction: row-reverse;
-  padding-left: 8px;
   /* position: fixed; */
 }
 

@@ -7,9 +7,6 @@ function SideBar() {
 
   return (
     <div className="sideBar">
-      <div className="cursor">
-        <img src="assets/Featured icon.png" alt="" />
-      </div>
       <div className="lesson">
         <div className="lesson-header">
           <div className="upper-section">

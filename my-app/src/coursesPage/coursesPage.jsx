@@ -5,7 +5,6 @@ import QuestionSection from "./questionSection/questionSection";
 import SideBar from "./siderBar/sideBar";
 import { fetchQuestions } from "../redux/action";
 import { useDispatch } from "react-redux";
-import Footer from "./footer/pageFooter.jsx";
 
 function CoursesPage() {
   const dispatch = useDispatch();
@@ -19,7 +18,6 @@ function CoursesPage() {
     <div className="coursesPage">
       <SideBar />
       <QuestionSection />
-      <Footer />
     </div>
   );
 }

@@ -1,8 +1,15 @@
+.parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .question-section {
   width: 944px;
   height: 308px;
   margin-top: 70px;
-  margin-left: 44px;
+  margin-left: 84px;
   border-radius: 8px;
   background: rgba(255, 255, 255, 1);
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.06),
