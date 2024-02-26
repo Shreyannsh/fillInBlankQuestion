@@ -33,7 +33,6 @@ export const updateAnswer = (id, answer) => async (dispatch) => {
 };
 export const isbookmarked = (id, isbookmarked) => async (dispatch) => {
   try {
-    dispatch({ type: "startLoading" });
     const response = await fakeFetch(
       "https://example.com/api/questions",
       false,
@@ -45,7 +44,6 @@ export const isbookmarked = (id, isbookmarked) => async (dispatch) => {
 
     if (response.status === 200) {
       dispatch({ type: "addQuestionList", payload: response.data.questions });
-      dispatch({ type: "stopLoading" });
     }
   } catch (error) {
     console.log(error);

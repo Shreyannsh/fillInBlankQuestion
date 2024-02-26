@@ -3,8 +3,8 @@
   flex-wrap: wrap;
   gap: 8px;
   padding-left: 10px;
-  overflow-y: scroll;
-  position: absolute;
+  overflow-y: auto;
+  max-height: 330px;
 }
 
 .questionNumberContainer {
@@ -35,4 +35,23 @@
 .bookmark-icon {
   position: relative;
   left: 25px;
+}
+
+.questionList::-webkit-scrollbar {
+  width: 5px;
+  height: 251px;
+}
+
+.questionList::-webkit-scrollbar-thumb {
+  background-color: rgba(
+    208,
+    213,
+    221,
+    1
+  ); /* Set the color of the scrollbar thumb */
+  border-radius: 5px; /* Optional: Round the corners of the thumb */
+}
+
+.questionList::-webkit-scrollbar-track {
+  background-color: white; /* Set the color of the scrollbar track */
 }

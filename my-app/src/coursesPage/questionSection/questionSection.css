@@ -72,6 +72,7 @@
   display: flex;
   align-items: center;
   margin-left: 12px;
+  flex-wrap: wrap;
 }
 
 .button-section {
@@ -91,10 +92,11 @@
   border: 1px solid rgba(102, 112, 133, 1);
   height: 35px;
   margin-left: 10px;
-  font-size: 26px;
+  font-size: 30px;
   max-width: 250px;
   padding-left: 10px;
   border-radius: 5px;
+  margin-top: 5px;
 }
 
 .input-area:focus {

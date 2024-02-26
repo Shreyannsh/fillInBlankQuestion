@@ -1,0 +1,30 @@
+.footer-section {
+  width: 1, 040px;
+  height: 60px;
+  top: 964px;
+  left: 400px;
+  padding: 12px, 32px, 12px, 32px;
+  border: 1px, 0px, 0px, 0px;
+  gap: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit-btn {
+  width: 203px;
+  height: 36px;
+  padding: 8px 14px 8px 14px;
+  border-radius: 8px;
+  border: 1px;
+  gap: 8px;
+  background: rgba(229, 229, 255, 1);
+  border: 1px solid rgba(229, 229, 255, 1);
+  /* //styleName: Text sm/Semibold; */
+  font-family: Source Sans Pro;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(0, 0, 191, 1);
+}
