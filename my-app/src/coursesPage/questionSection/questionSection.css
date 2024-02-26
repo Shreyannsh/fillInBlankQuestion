@@ -219,3 +219,7 @@
   background-color: rgb(245, 169, 70);
   border-radius: 5px;
 }
+
+.cursor {
+  position: absolute;
+}

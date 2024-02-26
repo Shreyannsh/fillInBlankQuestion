@@ -12,7 +12,7 @@ function QuestionSection() {
   const questionsList = useSelector((state) => state.questionsList);
   const questionNumber = useSelector((state) => state.questionNumber);
   const isLoading = useSelector((state) => state.isLoading);
-  console.log(questionsList);
+
   const [answerOptions, setAnswerOptions] = useState([]);
   const [input, setInput] = useState();
   const [answerNotFilled, setAnswerNotFilled] = useState(false);
@@ -191,7 +191,10 @@ function QuestionSection() {
           />
         </div>
       </div>
-      <div className="cursor">
+      <div
+        className="cursor"
+        onClick={() => dispatch({ type: "sidebarDisplay" })}
+      >
         <img src="assets/Featured icon.png" alt="" />
       </div>
       <Footer />

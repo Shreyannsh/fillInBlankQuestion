@@ -4,9 +4,12 @@ import "./sideBar.css";
 
 function SideBar() {
   const questionsList = useSelector((state) => state.questionsList);
-
+  const sidebarDisplay = useSelector((state) => state.sidebarDisplay);
   return (
-    <div className="sideBar">
+    <div
+      className="sideBar"
+      style={{ display: sidebarDisplay ? "block" : "none" }}
+    >
       <div className="lesson">
         <div className="lesson-header">
           <div className="upper-section">

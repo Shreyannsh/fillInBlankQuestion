@@ -2,6 +2,7 @@ const initialState = {
   questionsList: [],
   questionNumber: 0,
   isLoading: false,
+  sidebarDisplay: true,
 };
 
 const questionReducer = (state = initialState, action) => {
@@ -14,6 +15,9 @@ const questionReducer = (state = initialState, action) => {
       return { ...state, isLoading: true };
     case "stopLoading":
       return { ...state, isLoading: false };
+
+    case "sidebarDisplay":
+      return { ...state, sidebarDisplay: !state.sidebarDisplay };
     default:
       return state;
   }
