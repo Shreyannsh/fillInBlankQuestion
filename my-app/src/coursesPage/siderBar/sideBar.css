@@ -1,18 +1,16 @@
 .sideBar {
   width: 448px;
-  height: fit-content;
   top: 66px;
   border: 0px, 1px, 0px, 0px;
   gap: 8px;
   display: flex;
   flex-direction: row-reverse;
   padding-left: 8px;
-  position: fixed;
+  /* position: fixed; */
 }
 
 .lesson {
   width: 400px;
-  height: 958px;
   border: 0px, 1px, 0px, 0px;
   background: rgba(255, 255, 255, 1);
   border-right: 1px solid rgba(234, 236, 240, 1);
