@@ -4,7 +4,7 @@ import { IoClose } from "react-icons/io5";
 import { FaCheck } from "react-icons/fa6";
 
 import { useDispatch, useSelector } from "react-redux";
-import { updateAnswer } from "../../redux/action";
+import { isbookmarked, updateAnswer } from "../../redux/action";
 
 function QuestionSection() {
   const dispatch = useDispatch();
@@ -14,6 +14,7 @@ function QuestionSection() {
   console.log(questionsList);
   const [answerOptions, setAnswerOptions] = useState([]);
   const [input, setInput] = useState();
+  const [answerNotFilled, setAnswerNotFilled] = useState(false);
 
   const question = questionsList?.find(
     (question) => question.id === questionNumber
@@ -67,25 +68,41 @@ function QuestionSection() {
   };
 
   const checkAnswerFunction = () => {
-    if (answerOptions.includes(input)) {
-      dispatch(updateAnswer(question.id, "correct"));
+    if (input === "") {
+      setAnswerNotFilled(() => true);
     } else {
-      dispatch(updateAnswer(question.id, "wrong"));
+      if (answerOptions.includes(input)) {
+        setAnswerNotFilled(() => false);
+        dispatch(updateAnswer(question.id, "correct"));
+      } else {
+        setAnswerNotFilled(() => false);
+        dispatch(updateAnswer(question.id, "wrong"));
+      }
     }
   };
-
+  //console.log(input);
   useEffect(() => {
     getAnswersFunction();
+  }, [question]);
+
+  useEffect(() => {
     return () => {
       setInput(() => "");
     };
-  }, [question]);
+  }, [questionNumber]);
 
   return (
     <div className="question-section">
       <div className="question-section-header">
         <p className="question-number">Question {question?.id}</p>
-        <div className="isFlaged-section">
+        <div
+          className="isFlaged-section"
+          onClick={() =>
+            dispatch(
+              isbookmarked(question?.id, question?.isFlaged ? false : true)
+            )
+          }
+        >
           {question?.isFlaged ? (
             <img className="bookmark-img" src="/assets/bookmark-fill.png" />
           ) : (
@@ -111,18 +128,26 @@ function QuestionSection() {
           <span className="attempt">6 attempts left</span>
         </div>
       </div>
-      <div
-        className="answer"
-        style={{
-          color: question?.answered === "wrong" ? "red" : "rgb(22, 167, 22)",
-        }}
-      >
-        <div className="result-img">
-          {question?.answered === "wrong" && <IoClose />}
-          {question?.answered === "correct" && <FaCheck />}
-        </div>
-        <p>{question?.answered}</p>
-      </div>
+      {answerNotFilled ? (
+        <span className="answer provideAnswer">Please provide answer!</span>
+      ) : (
+        !isLoading && (
+          <div
+            className="answer"
+            style={{
+              color:
+                question?.answered === "wrong" ? "red" : "rgb(22, 167, 22)",
+            }}
+          >
+            <div className="result-img">
+              {question?.answered === "wrong" && <IoClose />}
+              {question?.answered === "correct" && <FaCheck />}
+            </div>
+
+            <span>{question?.answered}</span>
+          </div>
+        )
+      )}
     </div>
   );
 }

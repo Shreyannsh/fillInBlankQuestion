@@ -38,6 +38,13 @@ function QuestionsList() {
             <img src="/assets/progress.png" />
           )}
           <p className="questionNumber">{ques.id}</p>
+          {ques.isFlaged && (
+            <img
+              className="bookmark-icon"
+              src="/assets/bookmark-fill.png"
+              alt=""
+            />
+          )}
         </div>
       ))}
     </div>

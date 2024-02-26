@@ -1,12 +1,13 @@
 .sideBar {
   width: 448px;
-  height: 958px;
+  height: fit-content;
   top: 66px;
   border: 0px, 1px, 0px, 0px;
   gap: 8px;
   display: flex;
   flex-direction: row-reverse;
   padding-left: 8px;
+  position: fixed;
 }
 
 .lesson {
@@ -138,3 +139,7 @@ h3 {
   background: rgba(242, 244, 247, 1);
   text-align: center;
 }
+
+/* .scroll-list {
+  overflow-y: scroll;
+} */

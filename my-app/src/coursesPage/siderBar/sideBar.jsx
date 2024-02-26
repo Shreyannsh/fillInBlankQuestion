@@ -27,16 +27,17 @@ function SideBar() {
               <img src="assets/icon.png" /> Lesson 5
             </p>
           </div>
-
-          <h3>Assignment Title Here</h3>
-          <div className="labels">
-            <p>Questions:</p>
-            <p className="numberOfQuestions">
-              {questionsList.length} questions
-            </p>
-          </div>
           <div>
-            <QuestionsList />
+            <h3>Assignment Title Here</h3>
+            <div className="labels">
+              <p>Questions:</p>
+              <p className="numberOfQuestions">
+                {questionsList.length} questions
+              </p>
+            </div>
+            <div className="scroll-list">
+              <QuestionsList />
+            </div>
           </div>
         </div>
       </div>

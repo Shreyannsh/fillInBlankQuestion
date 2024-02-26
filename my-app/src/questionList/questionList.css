@@ -3,6 +3,8 @@
   flex-wrap: wrap;
   gap: 8px;
   padding-left: 10px;
+  overflow-y: scroll;
+  position: absolute;
 }
 
 .questionNumberContainer {
@@ -28,4 +30,9 @@
   letter-spacing: 0em;
   text-align: left;
   color: rgba(3, 8, 14, 1);
+}
+
+.bookmark-icon {
+  position: relative;
+  left: 25px;
 }
