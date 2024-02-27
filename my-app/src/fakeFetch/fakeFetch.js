@@ -224,9 +224,8 @@ export const fakeFetch = (
         };
 
         if (modifyAnswered) {
-          // Modify the answered key for a specific question
-          const questionToModify = id; // Change this to the desired question ID
-          console.log(response.data.questions);
+          const questionToModify = id;
+
           const modifiedQuestions = response.data.questions.map((question) => {
             if (question.id === questionToModify) {
               return {
@@ -245,17 +244,14 @@ export const fakeFetch = (
           );
         }
         if (modifybookmark) {
-          // Modify the answered key for a specific question
-          const questionToModify = id; // Change this to the desired question ID
-          //console.log(response.data.questions);
+          const questionToModify = id;
           const modifiedQuestions = response.data.questions.map((question) => {
             if (question.id === questionToModify) {
-              console.log(isbookmarked);
               return { ...question, isFlaged: isbookmarked };
             }
             return question;
           });
-          //console.log(modifiedQuestions);
+
           response.data.questions = modifiedQuestions;
           sessionStorage.setItem(
             "fakeFetchData",

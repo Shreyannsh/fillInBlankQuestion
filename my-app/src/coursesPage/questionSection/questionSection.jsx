@@ -9,29 +9,27 @@ import Footer from "../footer/pageFooter";
 
 function QuestionSection() {
   const dispatch = useDispatch();
+
+  const isLoading = useSelector((state) => state.isLoading);
   const questionsList = useSelector((state) => state.questionsList);
   const questionNumber = useSelector((state) => state.questionNumber);
-  const isLoading = useSelector((state) => state.isLoading);
-
   const [input, setInput] = useState(["", ""]);
   const [answerOptions, setAnswerOptions] = useState([]);
-
-  const [answerNotFilled, setAnswerNotFilled] = useState(false);
   const [fillInBlankArray, setFillInBlankArray] = useState();
-
-  const setValueAtIndex = (index, value) => {
-    const newArray = [...input];
-    newArray[index] = value;
-    setInput(newArray);
-  };
+  const [answerNotFilled, setAnswerNotFilled] = useState(false);
 
   const question = questionsList?.find(
     (question) => question.id === questionNumber
   );
 
   const splitedQuestion = question?.question?.split(" ");
-
   const answer = splitedQuestion?.filter((word) => word.includes("{"));
+
+  const setValueAtIndex = (index, value) => {
+    const newArray = [...input];
+    newArray[index] = value;
+    setInput(newArray);
+  };
 
   const fillInBlankArrayFunction = () => {
     let num = 1;
@@ -42,7 +40,7 @@ function QuestionSection() {
           return (
             <input
               key={index}
-              value={input[0]}
+              value={input[0] || ""}
               type="text"
               onChange={(e) => setValueAtIndex(0, e.target.value)}
               className="input-area"
@@ -52,7 +50,7 @@ function QuestionSection() {
           return (
             <input
               key={index}
-              value={input[1]}
+              value={input[1] || ""}
               type="text"
               onChange={(e) => setValueAtIndex(1, e.target.value)}
               className="input-area"
@@ -139,18 +137,12 @@ function QuestionSection() {
   useEffect(() => {
     setAnswerNotFilled(() => "");
     if (question?.answer.length !== 0) {
-      console.log("if");
       setInput(() => [question?.answer[0], question?.answer[1]]);
     } else {
-      console.log("else");
       setInput(() => ["", ""]);
     }
     getAnswersFunction();
   }, [question]);
-
-  useEffect(() => {
-    return () => {};
-  }, [questionNumber]);
 
   return (
     <div className="parent">
