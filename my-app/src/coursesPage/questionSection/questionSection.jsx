@@ -29,6 +29,7 @@ function QuestionSection() {
     word.includes("{") ? (
       <input
         key={index}
+        value={input}
         type="text"
         onChange={(e) => setInput(e.target.value)}
         className="input-area"
