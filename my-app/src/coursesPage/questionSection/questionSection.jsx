@@ -13,12 +13,18 @@ function QuestionSection() {
   const questionNumber = useSelector((state) => state.questionNumber);
   const isLoading = useSelector((state) => state.isLoading);
 
+  const [input, setInput] = useState(["", ""]);
   const [answerOptions, setAnswerOptions] = useState([]);
-  const [input1, setInput1] = useState("");
-  const [input2, setInput2] = useState("");
+
   const [answerNotFilled, setAnswerNotFilled] = useState(false);
   const [fillInBlankArray, setFillInBlankArray] = useState();
-  //  / console.log(input1, input2);
+
+  const setValueAtIndex = (index, value) => {
+    const newArray = [...input];
+    newArray[index] = value;
+    setInput(newArray);
+  };
+
   const question = questionsList?.find(
     (question) => question.id === questionNumber
   );
@@ -26,9 +32,8 @@ function QuestionSection() {
   const splitedQuestion = question?.question?.split(" ");
 
   const answer = splitedQuestion?.filter((word) => word.includes("{"));
-  // console.log(answer);
+
   const fillInBlankArrayFunction = () => {
-    console.log("hi");
     let num = 1;
     const displayedArray = splitedQuestion?.map((word, index) => {
       if (word.includes("{")) {
@@ -37,9 +42,9 @@ function QuestionSection() {
           return (
             <input
               key={index}
-              value={input1}
+              value={input[0]}
               type="text"
-              onChange={(e) => setInput1(e.target.value)}
+              onChange={(e) => setValueAtIndex(0, e.target.value)}
               className="input-area"
             />
           );
@@ -47,9 +52,9 @@ function QuestionSection() {
           return (
             <input
               key={index}
-              value={input2}
+              value={input[1]}
               type="text"
-              onChange={(e) => setInput2(e.target.value)}
+              onChange={(e) => setValueAtIndex(1, e.target.value)}
               className="input-area"
             />
           );
@@ -92,64 +97,59 @@ function QuestionSection() {
     });
     setAnswerOptions(() => array);
   };
-  // console.log(answerOptions);
 
   const checkAnswerFunction = () => {
-    console.log(input1);
-    console.log(input2);
-    console.log(answerOptions.length);
-    if (answerOptions.length === 1 && input1 === "") {
+    let correct = false;
+
+    if (answerOptions.length === 1 && input[0] === "") {
       setAnswerNotFilled(() => "please provide answer");
-    } else if (answerOptions.length === 2 && (input1 === "" || input2 === "")) {
+    } else if (
+      answerOptions.length === 2 &&
+      (input[0] === "" || input[1] === "")
+    ) {
       setAnswerNotFilled(() => "please provide both the answers");
     } else {
       answerOptions.map((answer, index) => {
         if (index === 0) {
-          console.log(answer, index, input1);
-          if (answer.includes(input1)) {
-            console.log(" 0 if");
+          if (answer.includes(input[0])) {
             setAnswerNotFilled(() => false);
-            dispatch(updateAnswer(question.id, "correct", input1));
+            dispatch(updateAnswer(question.id, "correct", input));
+            correct = true;
           } else {
-            console.log("0 else");
             setAnswerNotFilled(() => false);
-            dispatch(updateAnswer(question.id, "wrong", input1));
+            dispatch(updateAnswer(question.id, "wrong", input));
           }
-        } else if (index === 1 && question.answered === "correct") {
-          console.log(answer, index, input2);
-          if (answer.includes(input2)) {
-            console.log("1 if");
+        } else if (index === 1) {
+          if (answer.includes(input[1]) && correct) {
             setAnswerNotFilled(() => false);
-            dispatch(updateAnswer(question.id, "correct", input2));
+            dispatch(updateAnswer(question.id, "correct", input));
           } else {
-            console.log("1 else");
             setAnswerNotFilled(() => false);
-            dispatch(updateAnswer(question.id, "wrong", input2));
+            dispatch(updateAnswer(question.id, "wrong", input));
           }
         }
       });
     }
   };
-  //console.log(fillInBlankArray);
 
   useEffect(() => {
     fillInBlankArrayFunction();
-  }, [question, input1, input2]);
+  }, [question, input]);
 
   useEffect(() => {
-    if (question?.answer.length) {
-      setInput1(() => question?.answer[0]);
-      setInput2(() => question?.answer[1]);
+    setAnswerNotFilled(() => "");
+    if (question?.answer.length !== 0) {
+      console.log("if");
+      setInput(() => [question?.answer[0], question?.answer[1]]);
+    } else {
+      console.log("else");
+      setInput(() => ["", ""]);
     }
     getAnswersFunction();
   }, [question]);
 
   useEffect(() => {
-    return () => {
-      setInput1(() => "");
-      setInput2(() => "");
-      setAnswerNotFilled(() => "");
-    };
+    return () => {};
   }, [questionNumber]);
 
   return (

@@ -232,7 +232,7 @@ export const fakeFetch = (
               return {
                 ...question,
                 answered: isCorrect,
-                answer: [...question.answer, answer],
+                answer: answer,
               };
             }
             return question;
