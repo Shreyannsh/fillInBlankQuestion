@@ -1,29 +1,31 @@
 import "./questionSection.css";
 
-import { useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { FaCheck } from "react-icons/fa6";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { isbookmarked, updateAnswer } from "../../redux/action";
 
 import Footer from "../footer/pageFooter";
+import { isbookmarked, updateAnswer } from "../../redux/action";
 
 function QuestionSection() {
   const dispatch = useDispatch();
 
-  const isLoading = useSelector((state) => state.isLoading);
-  const questionsList = useSelector((state) => state.questionsList);
-  const questionNumber = useSelector((state) => state.questionNumber);
   const [input, setInput] = useState(["", ""]);
   const [answerOptions, setAnswerOptions] = useState([]);
   const [fillInBlankArray, setFillInBlankArray] = useState();
   const [answerNotFilled, setAnswerNotFilled] = useState(false);
+
+  const isLoading = useSelector((state) => state.isLoading);
+  const questionsList = useSelector((state) => state.questionsList);
+  const questionNumber = useSelector((state) => state.questionNumber);
 
   const question = questionsList?.find(
     (question) => question.id === questionNumber
   );
 
   const splitedQuestion = question?.question?.split(" ");
+
   const answer = splitedQuestion?.filter((word) => word.includes("{"));
 
   const setValueAtIndex = (index, value) => {

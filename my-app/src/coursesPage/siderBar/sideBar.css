@@ -8,7 +8,7 @@
 .lesson {
   width: 400px;
   border: 0px, 1px, 0px, 0px;
-  background: rgba(255, 255, 255, 1);
+  background: var(--white);
   border-right: 1px solid rgba(234, 236, 240, 1);
   text-align: left;
 }
@@ -59,7 +59,7 @@
   border-radius: 8px;
   border: 1px;
   gap: 8px;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: var(--white);
   border: 1px solid rgba(208, 213, 221, 1);
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
   display: flex;
@@ -83,7 +83,7 @@
   line-height: 24px;
   letter-spacing: 0em;
   text-align: left;
-  color: rgba(102, 112, 133, 1);
+  color: var(--grey);
 }
 
 .input:focus {
@@ -93,7 +93,7 @@
 .search-icon {
   width: 20px;
   height: 20px;
-  color: rgba(102, 112, 133, 1);
+  color: var(--grey);
   margin-top: -5px;
 }
 
@@ -103,14 +103,14 @@
 
 .lesson5 {
   height: 40px;
-  padding: 8px, 16px, 8px, 16px;
+  /* padding: 8px 16px 8px 16px; */
   gap: 4px;
   background: rgba(249, 250, 251, 1);
   border-bottom: 1px solid rgba(234, 236, 240, 1);
   display: flex;
   align-items: center;
-  padding-left: 10px;
-  color: rgba(102, 112, 133, 1);
+  /* padding-left: 10px; */
+  color: var(--grey);
 }
 
 h3 {
@@ -121,14 +121,14 @@ h3 {
   display: flex;
   justify-content: space-between;
   padding: 0px 10px;
-  color: rgba(102, 112, 133, 1);
+  color: var(--grey);
   font-weight: 500;
 }
 
 .numberOfQuestions {
   width: 104px;
   height: 25px;
-  padding: 0px, 4px, 0px, 4px;
+  padding: 0px 4px 0px 4px;
   border-radius: 3px;
   background: rgba(242, 244, 247, 1);
   text-align: center;
