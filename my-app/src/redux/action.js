@@ -12,7 +12,7 @@ export const fetchQuestions = () => async (dispatch) => {
   }
 };
 
-export const updateAnswer = (id, answer) => async (dispatch) => {
+export const updateAnswer = (id, isCorrect, answer) => async (dispatch) => {
   try {
     dispatch({ type: "startLoading" });
     const response = await fakeFetch(
@@ -20,6 +20,7 @@ export const updateAnswer = (id, answer) => async (dispatch) => {
       true,
       false,
       id,
+      isCorrect,
       answer
     );
 
@@ -38,6 +39,7 @@ export const isbookmarked = (id, isbookmarked) => async (dispatch) => {
       false,
       true,
       id,
+      null,
       null,
       isbookmarked
     );

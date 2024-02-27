@@ -14,83 +14,141 @@ function QuestionSection() {
   const isLoading = useSelector((state) => state.isLoading);
 
   const [answerOptions, setAnswerOptions] = useState([]);
-  const [input, setInput] = useState();
+  const [input1, setInput1] = useState("");
+  const [input2, setInput2] = useState("");
   const [answerNotFilled, setAnswerNotFilled] = useState(false);
-
+  const [fillInBlankArray, setFillInBlankArray] = useState();
+  //  / console.log(input1, input2);
   const question = questionsList?.find(
     (question) => question.id === questionNumber
   );
 
   const splitedQuestion = question?.question?.split(" ");
 
-  const answer = splitedQuestion?.find((word) => word.includes("{"));
-
-  const fillInBlankArray = splitedQuestion?.map((word, index) =>
-    word.includes("{") ? (
-      <input
-        key={index}
-        value={input}
-        type="text"
-        onChange={(e) => setInput(e.target.value)}
-        className="input-area"
-      />
-    ) : (
-      <span className="question-word" key={index}>
-        {word}
-      </span>
-    )
-  );
-
-  const getAnswersFunction = () => {
-    const splited = answer?.split("");
-
-    let opening = "";
-    let open = -1;
-    let word = "";
-    let answers = [];
-
-    splited?.map((alphabet, index) => {
-      if (alphabet === "[") {
-        opening = alphabet;
-        open = index;
-      }
-
-      if (opening === "[" && alphabet !== "]" && index > open) {
-        word = word + alphabet;
-      }
-      if (alphabet === "]" && opening === "[") {
-        answers = [...answers, word];
-        opening = "";
-        open = -1;
-        word = "";
+  const answer = splitedQuestion?.filter((word) => word.includes("{"));
+  // console.log(answer);
+  const fillInBlankArrayFunction = () => {
+    console.log("hi");
+    let num = 1;
+    const displayedArray = splitedQuestion?.map((word, index) => {
+      if (word.includes("{")) {
+        if (num === 1) {
+          num = num + 1;
+          return (
+            <input
+              key={index}
+              value={input1}
+              type="text"
+              onChange={(e) => setInput1(e.target.value)}
+              className="input-area"
+            />
+          );
+        } else if (num === 2) {
+          return (
+            <input
+              key={index}
+              value={input2}
+              type="text"
+              onChange={(e) => setInput2(e.target.value)}
+              className="input-area"
+            />
+          );
+        }
+      } else {
+        return (
+          <span className="question-word" key={index}>
+            {word}
+          </span>
+        );
       }
     });
-
-    setAnswerOptions(answers);
+    setFillInBlankArray(() => displayedArray);
   };
+
+  const getAnswersFunction = () => {
+    let array = [];
+    answer?.map((ans) => {
+      const splited = ans?.split("");
+      let opening = "";
+      let open = -1;
+      let word = "";
+      let answers = [];
+      splited?.map((alphabet, index) => {
+        if (alphabet === "[") {
+          opening = alphabet;
+          open = index;
+        }
+        if (opening === "[" && alphabet !== "]" && index > open) {
+          word = word + alphabet;
+        }
+        if (alphabet === "]" && opening === "[") {
+          answers = [...answers, word];
+          opening = "";
+          open = -1;
+          word = "";
+        }
+      });
+      array = [...array, answers];
+    });
+    setAnswerOptions(() => array);
+  };
+  // console.log(answerOptions);
 
   const checkAnswerFunction = () => {
-    if (input === "") {
-      setAnswerNotFilled(() => true);
+    console.log(input1);
+    console.log(input2);
+    console.log(answerOptions.length);
+    if (answerOptions.length === 1 && input1 === "") {
+      setAnswerNotFilled(() => "please provide answer");
+    } else if (answerOptions.length === 2 && (input1 === "" || input2 === "")) {
+      setAnswerNotFilled(() => "please provide both the answers");
     } else {
-      if (answerOptions.includes(input)) {
-        setAnswerNotFilled(() => false);
-        dispatch(updateAnswer(question.id, "correct"));
-      } else {
-        setAnswerNotFilled(() => false);
-        dispatch(updateAnswer(question.id, "wrong"));
-      }
+      answerOptions.map((answer, index) => {
+        if (index === 0) {
+          console.log(answer, index, input1);
+          if (answer.includes(input1)) {
+            console.log(" 0 if");
+            setAnswerNotFilled(() => false);
+            dispatch(updateAnswer(question.id, "correct", input1));
+          } else {
+            console.log("0 else");
+            setAnswerNotFilled(() => false);
+            dispatch(updateAnswer(question.id, "wrong", input1));
+          }
+        } else if (index === 1 && question.answered === "correct") {
+          console.log(answer, index, input2);
+          if (answer.includes(input2)) {
+            console.log("1 if");
+            setAnswerNotFilled(() => false);
+            dispatch(updateAnswer(question.id, "correct", input2));
+          } else {
+            console.log("1 else");
+            setAnswerNotFilled(() => false);
+            dispatch(updateAnswer(question.id, "wrong", input2));
+          }
+        }
+      });
     }
   };
-  //console.log(input);
+  //console.log(fillInBlankArray);
+
   useEffect(() => {
+    fillInBlankArrayFunction();
+  }, [question, input1, input2]);
+
+  useEffect(() => {
+    if (question?.answer.length) {
+      setInput1(() => question?.answer[0]);
+      setInput2(() => question?.answer[1]);
+    }
     getAnswersFunction();
   }, [question]);
 
   useEffect(() => {
     return () => {
-      setInput(() => "");
-      setAnswerNotFilled(() => false);
+      setInput1(() => "");
+      setInput2(() => "");
+      setAnswerNotFilled(() => "");
     };
   }, [questionNumber]);
 
@@ -144,9 +202,7 @@ function QuestionSection() {
           </div>
           <div className="answer-container">
             {answerNotFilled ? (
-              <span className="answer provideAnswer">
-                Please provide answer!
-              </span>
+              <span className="answer provideAnswer">{answerNotFilled}</span>
             ) : (
               !isLoading && (
                 <div
