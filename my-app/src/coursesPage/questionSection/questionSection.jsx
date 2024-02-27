@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
 import "./questionSection.css";
+
+import { useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { FaCheck } from "react-icons/fa6";
-
 import { useDispatch, useSelector } from "react-redux";
 import { isbookmarked, updateAnswer } from "../../redux/action";
+
 import Footer from "../footer/pageFooter";
 
 function QuestionSection() {

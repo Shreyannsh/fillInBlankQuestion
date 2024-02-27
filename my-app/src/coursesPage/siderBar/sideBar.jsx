@@ -1,6 +1,8 @@
-import { useSelector } from "react-redux";
-import QuestionsList from "../../questionList/questionList";
 import "./sideBar.css";
+
+import { useSelector } from "react-redux";
+
+import QuestionsList from "../../questionList/questionList";
 
 function SideBar() {
   const questionsList = useSelector((state) => state.questionsList);

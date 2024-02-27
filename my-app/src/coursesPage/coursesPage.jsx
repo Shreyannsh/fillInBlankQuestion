@@ -1,10 +1,11 @@
-import { useEffect } from "react";
 import "./coursesPage.css";
 
-import QuestionSection from "./questionSection/questionSection";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+
 import SideBar from "./siderBar/sideBar";
 import { fetchQuestions } from "../redux/action";
-import { useDispatch } from "react-redux";
+import QuestionSection from "./questionSection/questionSection";
 
 function CoursesPage() {
   const dispatch = useDispatch();

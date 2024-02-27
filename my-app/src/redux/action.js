@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 import { fakeFetch } from "../fakeFetch/fakeFetch";
 
 export const fetchQuestions = () => async (dispatch) => {
