@@ -6,7 +6,8 @@
 }
 
 .question-section {
-  width: 944px;
+  width: 100%;
+  max-width: 944px;
   height: 308px;
   margin-top: 70px;
   margin-left: 84px;
@@ -16,11 +17,11 @@
     0px 1px 3px 0px rgba(16, 24, 40, 0.1);
   position: relative;
   gap: 12px;
-  /* padding: 12px; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  align-self: center;
 }
 
 .main-content {
@@ -122,6 +123,7 @@
   padding-left: 10px;
   border-radius: 5px;
   margin-top: 5px;
+  color: black;
 }
 
 .input-area:focus {
@@ -222,4 +224,6 @@
 
 .cursor {
   position: absolute;
+  top: 70px;
+  margin-left: 10px;
 }

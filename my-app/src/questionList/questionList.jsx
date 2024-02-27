@@ -29,8 +29,12 @@ function QuestionsList() {
             background: questionNumber === ques.id && "rgba(242, 242, 255, 1)",
           }}
         >
-          {ques.answered === "correct" && <img src="/assets/correct.png" />}
-          {ques.answered === "wrong" && <img src="/assets/wrong.png" />}
+          {ques.answered === "correct" && (
+            <img className="correct-icon" src="/assets/correct.png" />
+          )}
+          {ques.answered === "wrong" && (
+            <img className="wrong-icon" src="/assets/wrong.png" />
+          )}
           {ques.answered === "" && questionNumber !== ques.id && (
             <img src="/assets/not-attempted.png" />
           )}
@@ -38,13 +42,15 @@ function QuestionsList() {
             <img src="/assets/progress.png" />
           )}
           <p className="questionNumber">{ques.id}</p>
-          {ques.isFlaged && (
-            <img
-              className="bookmark-icon"
-              src="/assets/bookmark-fill.png"
-              alt=""
-            />
-          )}
+          <div className="bookmark-section">
+            {ques.isFlaged && (
+              <img
+                className="bookmark-icon"
+                src="/assets/bookmark-fill.png"
+                alt=""
+              />
+            )}
+          </div>
         </div>
       ))}
     </div>
