@@ -29,11 +29,7 @@ function Header() {
           <p className="header-sub-section-heading">Dashboard</p>
         </NavLink>
 
-        <NavLink
-          to="/courses"
-          style={activeLink}
-          className="header-sub-section link"
-        >
+        <NavLink to="/" style={activeLink} className="header-sub-section link">
           <img src="/assets/course-icon.png" alt="" />
           <p className="header-sub-section-heading">Courses</p>
         </NavLink>

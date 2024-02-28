@@ -10,7 +10,7 @@ function App() {
       <Header />
       <FloatingNavbar />
       <Routes>
-        <Route path="/courses" element={<CoursesPage />} />
+        <Route path="/" element={<CoursesPage />} />
       </Routes>
     </div>
   );
