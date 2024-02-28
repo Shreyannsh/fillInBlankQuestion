@@ -36,7 +36,7 @@ function QuestionsList() {
             <img alt="" src="/assets/not-attempted.png" />
           )}
           {questionNumber === ques.id && ques.answered === "" && (
-            <img alt="" src="/assets/progress.png" />
+            <img src="/assets/progress.png" alt="" />
           )}
           <p className="questionNumber">{ques.id}</p>
           <div className="bookmark-section">
