@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import SideBar from "./siderBar/sideBar";
 import { fetchQuestions } from "../redux/action";
 import QuestionSection from "./questionSection/questionSection";
+import FloatingSideBar from "../component/floatingSidebar/floatingSidebar";
 
 function CoursesPage() {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ function CoursesPage() {
   return (
     <div className="coursesPage">
       <SideBar />
+      <FloatingSideBar />
       <QuestionSection />
     </div>
   );

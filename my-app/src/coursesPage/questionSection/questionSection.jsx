@@ -196,7 +196,7 @@ function QuestionSection() {
               <span className="attempt">6 attempts left</span>
             </div>
           </div>
-          <p className="answer-container">
+          <div className="answer-container">
             {answerNotFilled ? (
               <span className="answer provideAnswer">{answerNotFilled}</span>
             ) : (
@@ -219,7 +219,7 @@ function QuestionSection() {
                 </div>
               )
             )}
-          </p>
+          </div>
         </div>
         <div className="question-extra-options">
           <img

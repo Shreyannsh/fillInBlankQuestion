@@ -1,16 +1,16 @@
-import "./sideBar.css";
+import "./floatingSidebar.css";
 
 import { useSelector } from "react-redux";
 
 import QuestionsList from "../../questionList/questionList";
 
-function SideBar() {
+function FloatingSideBar() {
   const questionsList = useSelector((state) => state.questionsList);
   const sidebarDisplay = useSelector((state) => state.sidebarDisplay);
   console.log(sidebarDisplay);
   return (
     <div
-      className="sideBar"
+      className="floatingSideBar"
       style={{ display: sidebarDisplay ? "block" : "none" }}
     >
       <div className="lesson">
@@ -48,4 +48,4 @@ function SideBar() {
   );
 }
 
-export default SideBar;
+export default FloatingSideBar;
