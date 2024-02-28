@@ -19,6 +19,7 @@ function QuestionSection() {
   const isLoading = useSelector((state) => state.isLoading);
   const questionsList = useSelector((state) => state.questionsList);
   const questionNumber = useSelector((state) => state.questionNumber);
+  const sidebarDisplay = useSelector((state) => state.sidebarDisplay);
 
   const question = questionsList?.find(
     (question) => question.id === questionNumber
@@ -195,7 +196,7 @@ function QuestionSection() {
               <span className="attempt">6 attempts left</span>
             </div>
           </div>
-          <div className="answer-container">
+          <p className="answer-container">
             {answerNotFilled ? (
               <span className="answer provideAnswer">{answerNotFilled}</span>
             ) : (
@@ -218,7 +219,7 @@ function QuestionSection() {
                 </div>
               )
             )}
-          </div>
+          </p>
         </div>
         <div className="question-extra-options">
           <img
@@ -247,7 +248,11 @@ function QuestionSection() {
         className="cursor"
         onClick={() => dispatch({ type: "sidebarDisplay" })}
       >
-        <img src="assets/Featured icon.png" alt="" />
+        {sidebarDisplay ? (
+          <img src="assets/Featured icon.png" alt="" />
+        ) : (
+          <img src="assets/Featured-icon-reverse.png" alt="" />
+        )}
       </div>
       <Footer />
     </div>
