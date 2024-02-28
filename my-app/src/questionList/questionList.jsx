@@ -21,25 +21,22 @@ function QuestionsList() {
             boxShadow:
               questionNumber === ques.id &&
               "0px 2px 4px -2px rgba(16, 24, 40, 0.06)",
-            boxShadow:
-              questionNumber === ques.id &&
-              "0px 4px 8px -2px rgba(16, 24, 40, 0.1)",
             border:
               questionNumber === ques.id && "1px solid rgba(51, 51, 255, 1)",
             background: questionNumber === ques.id && "rgba(242, 242, 255, 1)",
           }}
         >
           {ques.answered === "correct" && (
-            <img className="correct-icon" src="/assets/correct.png" />
+            <img className="correct-icon" alt="" src="/assets/correct.png" />
           )}
           {ques.answered === "wrong" && (
-            <img className="wrong-icon" src="/assets/wrong.png" />
+            <img className="wrong-icon" alt="" src="/assets/wrong.png" />
           )}
           {ques.answered === "" && questionNumber !== ques.id && (
-            <img src="/assets/not-attempted.png" />
+            <img alt="" src="/assets/not-attempted.png" />
           )}
           {questionNumber === ques.id && ques.answered === "" && (
-            <img src="/assets/progress.png" />
+            <img alt="" src="/assets/progress.png" />
           )}
           <p className="questionNumber">{ques.id}</p>
           <div className="bookmark-section">

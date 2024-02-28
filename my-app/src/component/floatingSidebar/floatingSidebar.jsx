@@ -27,7 +27,7 @@ function FloatingSideBar() {
         <div className="questions">
           <div className="lesson5">
             <p>
-              <img src="assets/icon.png" /> Lesson 5
+              <img src="assets/icon.png" alt="" /> Lesson 5
             </p>
           </div>
           <div>

@@ -164,10 +164,15 @@ function QuestionSection() {
               }
             >
               {question?.isFlaged ? (
-                <img className="bookmark-img" src="/assets/bookmark-fill.png" />
+                <img
+                  className="bookmark-img"
+                  alt=""
+                  src="/assets/bookmark-fill.png"
+                />
               ) : (
                 <img
                   className="bookmark-img"
+                  alt=""
                   src="/assets/bookmark-empty.png"
                 />
               )}

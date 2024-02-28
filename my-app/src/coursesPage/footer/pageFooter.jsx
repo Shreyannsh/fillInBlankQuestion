@@ -18,7 +18,7 @@ function Footer() {
       </div>
       <button className="submit-btn">
         <span>Submit for final grading</span>
-        <img src="/assets/rocket-02.png" />
+        <img src="/assets/rocket-02.png" alt="" />
       </button>
     </div>
   );

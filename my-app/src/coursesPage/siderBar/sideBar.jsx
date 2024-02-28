@@ -7,7 +7,7 @@ import QuestionsList from "../../questionList/questionList";
 function SideBar() {
   const questionsList = useSelector((state) => state.questionsList);
   const sidebarDisplay = useSelector((state) => state.sidebarDisplay);
-  console.log(sidebarDisplay);
+
   return (
     <div
       className="sideBar"
@@ -27,7 +27,7 @@ function SideBar() {
         <div className="questions">
           <div className="lesson5">
             <p>
-              <img src="assets/icon.png" /> Lesson 5
+              <img src="assets/icon.png" alt="" /> Lesson 5
             </p>
           </div>
           <div>

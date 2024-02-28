@@ -107,7 +107,7 @@
 .button-section {
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
   gap: 8px;
   top: 12px;
   position: relative;
