@@ -39,7 +39,7 @@ export const fakeFetch = (
             {
               id: 4,
               question:
-                "He {[plays][watches]} guitar and {[sings,write]} songs",
+                "He {[plays][watches]} guitar and {[sings][write]} songs",
               answered: "",
               answer: [],
               isFlaged: false,

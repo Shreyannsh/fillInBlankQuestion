@@ -24,7 +24,6 @@ function QuestionSection() {
   const question = questionsList?.find(
     (question) => question.id === questionNumber
   );
-
   const splitedQuestion = question?.question?.split(" ");
 
   const answer = splitedQuestion?.filter((word) => word.includes("{"));
