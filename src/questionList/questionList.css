@@ -18,6 +18,7 @@
   align-items: center;
   justify-content: space-around;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .questionNumber {
@@ -29,6 +30,10 @@
   letter-spacing: 0em;
   text-align: left;
   color: rgba(3, 8, 14, 1);
+}
+
+.in-progress-img {
+  width: 90px;
 }
 
 .correct-icon {
