@@ -12,7 +12,6 @@ export default function FloatingNavbar() {
     boxShadow: isActive ? "0px 2px 0px 0px rgba(246, 177, 77, 1)" : "",
   });
 
-  console.log(floatingNavbar);
   return (
     <div
       className="floatingNavbar"

@@ -7,7 +7,7 @@ import QuestionsList from "../../questionList/questionList";
 function FloatingSideBar() {
   const questionsList = useSelector((state) => state.questionsList);
   const sidebarDisplay = useSelector((state) => state.sidebarDisplay);
-  console.log(sidebarDisplay);
+
   return (
     <div
       className="floatingSideBar"
