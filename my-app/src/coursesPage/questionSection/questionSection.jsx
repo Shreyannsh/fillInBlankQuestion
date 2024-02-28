@@ -184,11 +184,13 @@ function QuestionSection() {
                 onClick={() => checkAnswerFunction()}
               >
                 {isLoading ? (
-                  <img
-                    className="loader"
-                    src="https://i.gifer.com/ZKZg.gif"
-                    alt="loading"
-                  />
+                  <span>
+                    <img
+                      className="loader"
+                      src="https://i.gifer.com/ZKZg.gif"
+                      alt="loading"
+                    />
+                  </span>
                 ) : (
                   "Check"
                 )}

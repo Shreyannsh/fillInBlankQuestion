@@ -60,3 +60,50 @@
   letter-spacing: 0em;
   text-align: left;
 }
+
+@media (max-width: 400px) {
+  .footer-section {
+    height: 86px;
+    padding: 12px 32px 12px 32px;
+    gap: 8px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white);
+    border-top: 1px solid rgba(234, 236, 240, 1);
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.06);
+    /* position: absolute;
+    bottom: 0;
+    width: 100%; */
+  }
+
+  .toggle {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-left: -15px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    text-align: center;
+    height: 56px;
+    border-radius: 8px;
+    border: 1px;
+    gap: 8px;
+    background: rgba(229, 229, 255, 1);
+    border: 1px solid rgba(229, 229, 255, 1);
+    /* //styleName: Text sm/Semibold; */
+    font-family: Source Sans Pro;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 25%;
+    padding-right: 10%;
+  }
+}

@@ -1,4 +1,11 @@
-.header {
+.floatingNavbar {
+  display: flex;
+  z-index: 100;
+  position: fixed;
+  margin-top: 3rem;
+}
+
+/* .header {
   display: flex;
   justify-content: space-between;
   padding: 0px 32px;
@@ -9,22 +16,21 @@
   left: 0;
   right: 0;
   z-index: 10;
-}
+} */
 
-.header-section {
+.floating-header-section {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 80vw;
+  margin-left: 6rem;
+  margin-top: 10px;
 }
 
-.humburger-menu {
-  width: 30px;
-  padding-right: 15px;
-  display: none;
-}
-
-.header-sub-section {
+.floating-header-sub-section {
+  margin-top: 15px;
   width: 114px;
-  height: 66px;
+  height: 50px;
   gap: 2px;
   display: flex;
   flex-direction: column;
@@ -54,34 +60,23 @@
   text-decoration: none;
 }
 
-@media (max-width: 400px) {
-  .brand-name {
+@media (min-width: 684px) {
+  .floating-header-section {
     display: none;
-  }
-}
-
-@media (max-width: 684px) {
-  .header-navbar {
-    display: none;
-  }
-
-  .humburger-menu {
-    display: block;
-    margin-left: -15px;
   }
 }
 
 @media (max-width: 900px) {
   /* .header-navbar {
-    display: block;
-    align-items: center;
-  } */
+      display: block;
+      align-items: center;
+    } */
 
   /* .header-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  } */
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    } */
 
   .header-sub-section {
     /* width: 100%; */

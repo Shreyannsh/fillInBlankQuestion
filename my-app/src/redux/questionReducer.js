@@ -3,6 +3,7 @@ const initialState = {
   questionNumber: 0,
   isLoading: false,
   sidebarDisplay: true,
+  floatingNavbar: false,
 };
 
 const questionReducer = (state = initialState, action) => {
@@ -18,6 +19,11 @@ const questionReducer = (state = initialState, action) => {
 
     case "sidebarDisplay":
       return { ...state, sidebarDisplay: !state.sidebarDisplay };
+
+    case "floatingNavbar":
+      console.log("hi");
+      return { ...state, floatingNavbar: !state.floatingNavbar };
+
     default:
       return state;
   }
