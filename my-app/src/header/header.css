@@ -72,19 +72,7 @@
 }
 
 @media (max-width: 900px) {
-  /* .header-navbar {
-    display: block;
-    align-items: center;
-  } */
-
-  /* .header-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  } */
-
   .header-sub-section {
-    /* width: 100%; */
     max-width: 70px;
     height: 66px;
     gap: 2px;

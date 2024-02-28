@@ -19,7 +19,7 @@
   gap: 8px;
   background: rgba(229, 229, 255, 1);
   border: 1px solid rgba(229, 229, 255, 1);
-  /* //styleName: Text sm/Semibold; */
+
   font-family: Source Sans Pro;
   font-size: 14px;
   font-weight: 600;
@@ -52,7 +52,6 @@
 }
 
 .text {
-  /* //styleName: Text sm/Regular; */
   font-family: Source Sans Pro;
   font-size: 16px;
   font-weight: 400;
@@ -73,9 +72,6 @@
     background: var(--white);
     border-top: 1px solid rgba(234, 236, 240, 1);
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.06);
-    /* position: absolute;
-    bottom: 0;
-    width: 100%; */
   }
 
   .toggle {
@@ -94,7 +90,6 @@
     gap: 8px;
     background: rgba(229, 229, 255, 1);
     border: 1px solid rgba(229, 229, 255, 1);
-    /* //styleName: Text sm/Semibold; */
     font-family: Source Sans Pro;
     font-size: 14px;
     font-weight: 600;

@@ -146,9 +146,6 @@ h3 {
   text-align: center;
 }
 
-/* .scroll-list {
-    overflow-y: scroll;
-  } */
 @media (max-width: 400px) {
   .floatingSideBar {
     width: 200px;

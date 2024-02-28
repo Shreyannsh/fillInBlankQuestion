@@ -21,7 +21,6 @@ const questionReducer = (state = initialState, action) => {
       return { ...state, sidebarDisplay: !state.sidebarDisplay };
 
     case "floatingNavbar":
-      console.log("hi");
       return { ...state, floatingNavbar: !state.floatingNavbar };
 
     default:
