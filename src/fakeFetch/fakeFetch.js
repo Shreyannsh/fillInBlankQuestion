@@ -16,14 +16,15 @@ export const fakeFetch = (
           questions: [
             {
               id: 1,
-              question: "I {[play][hate][love]} soccer.",
+              question:
+                "I {[play][hate][love]} soccer but I {[enjoy]} studying",
               answered: "",
               answer: [],
               isFlaged: false,
             },
             {
               id: 2,
-              question: "She {[reads][writes]} books.",
+              question: "She {[reads][writes]} books and {[recite]} poems",
               answered: "",
               answer: [],
               isFlaged: false,
@@ -37,7 +38,8 @@ export const fakeFetch = (
             },
             {
               id: 4,
-              question: "He {[plays][watches]} guitar.",
+              question:
+                "He {[plays][watches]} guitar and {[sings,write]} songs",
               answered: "",
               answer: [],
               isFlaged: false,
@@ -86,7 +88,8 @@ export const fakeFetch = (
             },
             {
               id: 11,
-              question: "They {[listen][create][enjoy]} music.",
+              question:
+                "They {[listen][create][enjoy]} music and {[eats]} at restaurants",
               answered: "",
               answer: [],
               isFlaged: false,
